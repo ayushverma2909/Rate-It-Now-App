@@ -1,0 +1,170 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+  line-height: 1.6;
+  padding: 40px 20px;
+  margin: auto;
+}
+
+/* Header */
+
+.adding-details{
+  margin: 0px 20vw;
+}
+
+h1 {
+  font-size: 2.8rem;
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 40px;
+}
+
+/* Form */
+form {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input,
+textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: #fdfdfd;
+}
+
+.rating{
+  width: 10vw;
+}
+.inputDate{
+  margin-right: 50px;
+  width: 10vw;
+} 
+.dateRating{
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+textarea{
+  height: 150px;
+}
+
+button {
+  padding: 12px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+  
+}
+
+.add-note{
+  width: 200px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.reviews{
+  display: flex;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 50px;
+  margin: 20px 0px;
+}
+
+/* Book Review Card */
+.book-list{
+  display: flex;
+  justify-content: center;
+  max-width: 100vw;
+  flex-wrap: wrap;
+}
+
+.book-card {
+  background-color: #ffffff;
+  border-left: 8px solid #007bff;
+  border-radius: 10px;
+  padding: 25px;
+  margin:5px 15px 15px 10px ;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  flex-wrap: wrap;
+}
+
+.book-info {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.book-cover {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-text {
+  flex: 1;
+}
+
+.book-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.book-author {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+.book-notes {
+  color: #444;
+  font-size: 1.05rem;
+}
+
+/* Delete Button */
+.delete-btn {
+  margin: 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.3s;
+  width: 100px;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}

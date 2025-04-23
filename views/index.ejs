@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Book Notes</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <h1>📚 My Book Notes</h1>
+
+  <form action="/add" method="POST" class="adding-details">
+    <input type="text" name="bookTitle" placeholder="Enter a book title..." required />
+    <div class="dateRating">
+      <input type="date" name="dateRead" required class="inputDate"/>
+      <input type="number" name="rating" placeholder="Rating (1-10)" min="1" max="10" required class="rating"/>
+    </div>
+    <textarea name="notes" placeholder="Your thoughts..." required></textarea>
+    <br />
+    <button type="submit" class="add-note">Add Note</button>
+  </form>
+
+  <% if (book) { %>
+    <div class="book-card">
+      <div class="book-info">
+        <% if (book.cover_url) { %>
+          <img class="book-cover" src="<%= book.cover_url %>" alt="Cover" />
+        <% } %>
+        <div class="book-text">
+          <div class="book-title"><%= book.title %></div>
+          <div class="book-author">by <%= book.author %></div>
+          <p><strong>Date read:</strong> <%= book.date_read.toDateString() %>. <strong>How strongly I recommend it:</strong> <%= book.rating %>/10</p>
+          <div><%= book.notes %></div>
+        </div>
+      </div>
+    </div>
+  <% } %>
+  <h2 class="reviews"><u>REVIEWS</u></h2><br>
+  
+  <div class="book-list">
+   
+    <% books.forEach(book => { %>
+      <div class="book-card">
+        <div class="book-info">
+          <% if (book.cover_url) { %>
+            <img class="book-cover" src="<%= book.cover_url %>" alt="Cover" />
+          <% } %>
+          <div class="book-text">
+            <div class="book-title"><%= book.title %></div>
+            <div class="book-author">by <%= book.author %></div>
+            <p><strong>Date read:</strong> <%= new Date(book.date_read).toDateString() %>. <strong>How strongly I recommend it:</strong> <%= book.rating %>/10</p>
+            <div> <b>Description: </b><br><%= book.notes %></div>
+            <form action="/delete/<%= book.id %>" method="POST">
+              <button type="submit" class="delete-btn">Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    <% }); %>
+  </div>
+</body>
+</html>
